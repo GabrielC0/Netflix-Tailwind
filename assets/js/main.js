@@ -138,19 +138,18 @@ function desactiveBaS3(){
     BaS3.pause()
 }
 
-const account = document.getElementById("btn-account");
-const divAccount = document.getElementById("div-account");
 
+function toggleSection(id) {
 
-account.addEventListener("mouseover", () => {
-    divAccount.style.display = "block"
-})
+    let elmDisplay = document.getElementById(id)
 
-divAccount.addEventListener("mouseover", () => {
-    divAccount.style.display = "block"
-})
+    if( elmDisplay.style.display == "block") {
 
-divAccount.addEventListener("mouseout", () => {
-    divAccount.style.display = "none"
-})
+        elmDisplay.style.display = "none"
 
+    } else {
+
+        elmDisplay.style.display = "block"
+
+    }
+}
