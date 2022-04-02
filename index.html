@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--header start -->
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--tags to tell Microsoft Internet Explorer to use the latest rendering engine ect ect -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--control the layout -->
+    
+    <meta name="description" content="Page d'aceuil de Netflix One Piece grace a Tailwind">
+    <!--Description -->
+    
+    <meta name="Auteur"  content="Gabriel-Changrenier">
+    <!--meta name -->
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--link tailwind -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
+    <script src="https://use.fontawesome.com/releases/v6.0.0/js/all.js"crossorigin="anonymous"></script>
+    <!--link : fontawesome -->
+    
+    <title>Home - Netflix</title>
+    <!--header end -->
+    
+    <link rel="shortcut icon" href="favicon.png" type="image/icon">
+    <!--fav icon -->
+
+    <style>
+        ::-webkit-scrollbar{
+            width: 0px;
+            background: transparent; 
+        }
+    </style>
+
+</head>
+
+<body class="bg-black text-slate-100">
+
+    
+    <header class="w-screen h-full hover:cursor-pointer">
+
+        <!-- NavBar haut -->
+        <section class="fixed top-0 w-full z-40" id="navbar">
+            
+            <div class="absolute bg-gradient-to-t from-transparent to-black top-0 left-0 w-full h-10"></div>
+
+            <nav class="flex md:justify-between z-50 w-full px-10 py-1 justify-center transition-all duration-300" id="NavBar">
+
+                <!--Partie gauche de la navbar -->
+                <div class="flex items-center md:justify-start w-auto">
+
+                    <img src="assets/img/header/netflix.png" alt="Netflix Logo" class="w-28 hover:cursor-pointer">
+
+                    <!--Partie centre de la Navbar -->
+                    <div class="md:flex hidden justify-between lg:ml-8 md:ml-3 lg:text-sm text-xs">
+
+                        <a href="#" class="text-white hover:cursor-pointer hover:text-green-500">Home</a>
+                        <a href="#" class="ml-5 text-white hover:cursor-pointer hover:text-green-500">TV Show</a>
+                        <a href="#" class="ml-5 text-white hover:cursor-pointer hover:text-green-500">Movies</a>
+                        <a href="#" class="ml-5 text-white hover:cursor-pointer hover:text-green-500">New & Popular</a>
+                        <a href="#" class="ml-5 text-white hover:cursor-pointer hover:text-green-500">My List</a>
+                        <a href="#" class="ml-5 text-white hover:cursor-pointer hover:text-green-500">Watch Again</a>
+
+                    </div>
+
+                </div>
+
+                <!-- Right part of navbar -->
+                <div class="md:flex hidden items-center justify-around lg:w-52 md:w-36 lg:text-base text-xs">
+
+                    <div>
+                        <nav class="flex text-white space-x-8 mr-6 items-center">
+                            <button><i class="fas fa-search hover:text-slate-300 outline-none"></i></button>
+                            <button><i class="fas fa-gift hover:text-slate-300 outline-none"></i></button>
+                            <button><i class="fas fa-bell hover:text-slate-300 outline-none" id="cloche"></i></button>
+                            
+                        </nav>
+                    </div>
+
+                    <div class="flex items-center justify-between ml-2 group">
+
+                        <img src="assets/img/header/avatar1.jpg" alt="Avatar" class="w-10 rounded group-hover:cursor-pointer">
+                        <button class="focus:outline-none"><i class="fa-solid fa-angle-down ml-2 group-hover:rotate-180 transition-all"></i></button>
+
+                        <!-- Profile Block -->
+                        <div class="absolute right-0 translate-x-full top-16 mt-3 bg-black w-48 border border-gray-800 opacity-0 group-hover:opacity-100 group-hover:right-10 group-hover:translate-x-0 transition-opacity">
+
+                            <h1 class="absolute right-10 text-lg -translate-y-full mt-1"><i class="fa-solid fa-angle-down rotate-180"></i></h1>
+
+                            <div class="p-3 border-b border-gray-500 flex-col">
+
+                                <div class="flex mb-3 items-center ">
+                                    <img src="assets/img/header/avatar1.jpg" alt="Avatar Image" class="w-10 rounded">
+                                    <a href="#" class="text-sm ml-2 hover:underline focus:outline-none">Mom</a>
+                                </div>
+
+                                <div class="flex mb-3 items-center group">
+                                    <img src="assets/img/header/avatar1.jpg" alt="Avatar Image" class="w-10 rounded">
+                                    <a href="#" class="text-sm ml-2 hover:underline focus:outline-none">Dady</a>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="text-sm ml-3 hover:underline focus:outline-none"><span class="text-lg mr-3"><i class="fa-solid fa-pencil"></i></span> Manage profiles</a>
+                                </div>
+
+                            </div>
+
+                            <div class="p-3 border-b border-gray-500 flex justify-center flex-col">
+                                
+                                <a href="#" class="hover:underline ml-3 mb-2 text-sm focus:outline-none"><span class="text-lg mr-3"><i class="fa-solid fa-user"></i></span> Account</a>                
+                                <a href="#" class="hover:underline ml-3 text-sm focus:outline-none"><span class="text-lg mr-3"><i class="fa-solid fa-circle-info"></i></span>Helper Center</a>
+                            
+                            </div>
+
+                            <div class="p-3">
+                                <a href="#" class="hover:underline text-sm focus:outline-none">Disconnect</a>
+                            </div>
+
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </section>
+
+        <!--Partie centre-->
+        <section class="w-screen h-screen" id="HeaderMidle" onmouseover="play('#HeaderVideo')" onmouseout="pause('#HeaderVideo')">
+
+            <!--Image de fond centre-->
+            <div class="absolute top-0 w-full h-full bg-[url('./assets/img/header/heroImage.png')] bg-cover bg-center z-[1]"></div>
+            <video src="./assets/img/video/HeaderBA.mp4" autoplay loop class="absolute top-0 h-full w-full object-cover" id="HeaderVideo" onclick="toggleMuted('#HeaderVideo')"></video>
+            <div class="absolute bg-gradient-to-b from-transparent to-black bottom-0 w-full h-10"></div>
+
+            <!--Titre / Syn / Top / Button -->
+            <div class="flex flex-col h-full justify-center ml-16 xl:w-2/6 lg:w-2/5 sm:w-2/4 w-3/5">
+
+                <img src="assets/img/header/LOGO.png" alt="" class="z-10">
+                
+                
+                <div class="z-10 flex items-center mt-3">
+
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: rgb(229, 9, 20);"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 2C2.44772 2 2 2.44772 2 3V21C2 21.5523 2.44772 22 3 22H21C21.5523 22 22 21.5523 22 21V3C22 2.44772 21.5523 2 21 2H3ZM17.2299 10.8934C16.6125 10.4971 15.8913 10.2996 15.0673 10.2996C14.2444 10.2996 13.5231 10.4971 12.9056 10.8934C12.2881 11.2905 11.8114 11.8536 11.4762 12.5839C11.1411 13.3149 10.9735 14.1695 10.9735 15.1493C10.9735 16.1383 11.1411 16.9957 11.4762 17.7221C11.8114 18.4478 12.2881 19.0091 12.9056 19.4052C13.5231 19.8014 14.2444 20 15.0673 20C15.8913 20 16.6125 19.8014 17.2299 19.4052C17.8475 19.0091 18.3242 18.4478 18.6594 17.7221C18.9945 16.9957 19.1612 16.1383 19.1612 15.1493C19.1612 14.1695 18.9945 13.3149 18.6594 12.5839C18.3242 11.8536 17.8475 11.2905 17.2299 10.8934ZM9.47922 19.7994V10.3263L4.92658 11.4351V13.2656L7.20991 12.6774V19.7994H9.47922ZM13.7606 12.9513C14.0767 12.4298 14.5117 12.1701 15.0673 12.1701C15.6239 12.1701 16.0589 12.4298 16.3751 12.9513C16.6913 13.4718 16.8489 14.2058 16.8489 15.1493C16.8489 16.0938 16.6913 16.8268 16.3751 17.3473C16.0589 17.8688 15.6239 18.1296 15.0673 18.1296C14.5117 18.1296 14.0767 17.8688 13.7606 17.3473C13.4442 16.8268 13.2868 16.0938 13.2868 15.1493C13.2868 14.2058 13.4442 13.4718 13.7606 12.9513ZM13.0737 4.19939C12.7285 4.06677 12.3485 4 11.9344 4C11.5194 4 11.1405 4.06677 10.7952 4.19939C10.4521 4.33122 10.1518 4.51771 9.89848 4.75622C9.64404 4.99367 9.44963 5.27379 9.312 5.59396C9.17437 5.91504 9.10556 6.26299 9.10556 6.63872C9.10556 7.01446 9.17437 7.36241 9.312 7.68349C9.44963 8.00352 9.64404 8.28286 9.89848 8.52136C10.1518 8.75974 10.4521 8.9453 10.7952 9.07792C11.1405 9.20976 11.5194 9.27745 11.9344 9.27745C12.3485 9.27745 12.7285 9.20976 13.0737 9.07792C13.4168 8.9453 13.7161 8.75974 13.9704 8.52136C14.2239 8.28286 14.4194 8.00352 14.557 7.68349C14.6947 7.36241 14.7635 7.01446 14.7635 6.63872C14.7635 6.26299 14.6947 5.91504 14.557 5.59396C14.4194 5.27379 14.2239 4.99367 13.9704 4.75622C13.7161 4.51771 13.4168 4.33122 13.0737 4.19939ZM8.75526 5.30869V4.12288H4V5.30869H5.63894V9.15457H7.11632V5.30869H8.75526ZM18.9904 4.3469C18.6683 4.19847 18.2893 4.12327 17.8484 4.12327H15.5101V9.15392H16.9855V7.70838H17.8484C18.2893 7.70838 18.6683 7.63318 18.9904 7.48384C19.3117 7.33541 19.5601 7.12483 19.7366 6.85484C19.9132 6.58578 20 6.26931 20 5.90845C20 5.55682 19.9132 5.24587 19.7366 4.97602C19.5601 4.70683 19.3117 4.49624 18.9904 4.3469ZM11.2392 5.39166C11.4387 5.27379 11.6701 5.21545 11.9344 5.21545C12.1988 5.21545 12.4302 5.27379 12.6297 5.39166C12.8292 5.50954 12.9849 5.67653 13.0955 5.89001C13.2072 6.10521 13.2632 6.35386 13.2632 6.63872C13.2632 6.92267 13.2072 7.17224 13.0955 7.38651C12.9849 7.60092 12.8292 7.76791 12.6297 7.88565C12.4302 8.00352 12.1988 8.062 11.9344 8.062C11.6701 8.062 11.4387 8.00352 11.2392 7.88565C11.0397 7.76791 10.8841 7.60092 10.7724 7.38651C10.6617 7.17224 10.6057 6.92267 10.6057 6.63872C10.6057 6.35386 10.6617 6.10521 10.7724 5.89001C10.8841 5.67653 11.0397 5.50954 11.2392 5.39166ZM16.9855 5.27195H17.6149C17.9252 5.27195 18.1515 5.32845 18.2913 5.43895C18.4309 5.54931 18.5017 5.70616 18.5017 5.90845C18.5017 6.11535 18.4309 6.27589 18.2913 6.38902C18.1515 6.50228 17.9252 6.55878 17.6149 6.55878H16.9855V5.27195Z" fill="currentColor"></path></svg>
+                    <!--Top 10 SVG -->
+                    <h3 class="ml-2 text-2xl font-bold">ワンピース : One Piece</h3>
+                    <!--Titre -->
+
+                </div>
+
+                <p class="z-10 text-xl mt-3">  
+                    <!--Syno -->
+                    L'histoire de One Piece se déroule dans un monde fictif dominé par les océans, 
+                    où certains pirates aspirent à une ère de liberté et d'aventure connue comme « l'âge d'or de la piraterie ». 
+                    Cette époque fut inaugurée à la suite des derniers mots prononcés par le roi des pirates, 
+                    Gol D. Roger, surnommé Gold Roger avant son exécution5. Roger annonce au monde que ses habitants étaient 
+                    libres de chercher toutes les richesses qu'il avait accumulées durant sa vie entière, le « One Piece. »
+                </p>
+            
+                <div class="z-10 mt-6 w-full">
+
+                    <button class="px-9 py-2 bg-white hover:bg-white/[.70] rounded-md text-black mr-5 focus:outline-none"><span class="mr-1"><i class="fa-solid fa-play"></i></span> Play</button>
+                    <button class="px-7 py-2 bg-gray-600/[.5] hover:bg-gray-500/[.4] rounded-md focus:outline-none"><span class="mr-1"><i class="fa-solid fa-circle-info"></i></span> More Info</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </header>
+    <!--Header -->
+
+    <!-- Main section -->
+    <main class="w-full">
+        <!--Section milieu -->
+
+        <!--Section : My list -->
+        <section>
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a class="" href="#">My list</a>
+                </h2>
+
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-auto scroll-smooth"  id="content-myList" onmouseenter="mouseEnter('div-left-btn', 'div-right-btn')" onmouseleave="mouseLeave('div-left-btn', 'div-right-btn')">
+
+                    <a href="#" class="min-w-[288px] h-40" onmouseover="activeBaS()" onmouseout="desactiveBaS()"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list0" alt="img"><video src="./assets/img/video/BA1.mp4" class="hidden w-72 h-40 overflow-visible absolute transform-img"  id="BaS"></video></a>
+                    <a href="#" class="min-w-[288px] h-40" onmouseover="activeBaS2()" onmouseout="desactiveBaS2()"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list1" alt="img"><video src="./assets/img/video/BA2.mp4" class="hidden w-72 h-40 overflow-visible absolute transform-img"  id="BaS2"></video></a>
+                    <a href="#" class="min-w-[288px] h-40" onmouseover="activeBaS3()" onmouseout="desactiveBaS3()"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list2" alt="img"><video src="./assets/img/video/BA3.mp4" class="hidden w-72 h-40 overflow-visible absolute transform-img"  id="BaS3"></video></a>
+                    
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn">
+                        <button id="right-btn" onclick="goRight('content-myList')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn">
+                        <button id="left-btn" onclick="goLeft('content-myList')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+
+                    <div class="min-w-max" > 
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list0" src="./assets/img/img-main/my-list/hunter-x-hunter.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list1" src="./assets/img/img-main/my-list/hunter-x-hunter.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list2" src="./assets/img/img-main/my-list/my-hero-academia.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list3" src="./assets/img/img-main/my-list/narco.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list4" src="./assets/img/img-main/my-list/oats.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list5" src="./assets/img/img-main/my-list/south-spark.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list6" src="./assets/img/img-main/my-list/paradise-police.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list7" src="./assets/img/img-main/my-list/final-space.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list8" src="./assets/img/img-main/my-list/enough.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40 hover:z-20 hover:overflow-visible hover:absolute transform-img" id="img-slide-my-list9" src="./assets/img/img-main/my-list/ciel-sassombrit.jpg" alt="img"></a>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+
+        <!--Section : biggest hits on netflix -->
+        <section>
+
+            <div class="">
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a class="" href="#">biggest hits on netflix</a>
+                </h2>
+    
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-scroll scroll-smooth" onmouseenter="mouseEnter('div-left-btn2', 'div-right-btn2')" onmouseleave="mouseLeave('div-left-btn2', 'div-right-btn2')" id="content-biggestHit">
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn2">
+                        <button onclick="goLeft('content-biggestHit')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/perdu-dans-lartique.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/final-space.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/sans-repit.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/son-vrai-visage.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/the-gardien-of-justice.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/escapeRoom.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/theLastKingdom.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/formule1.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/img-succes/reineDuSud.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-400" src="./assets/img/img-main/img-succes/adam.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn2">
+                        <button onclick="goRight('content-biggestHit')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section : Trending Now -->
+        <section>
+
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a class="" href="#">Trending Now</a>
+                </h2>
+
+                <div class="flex pl-14 space-x-2 w-full scroll-smooth overflow-x-auto" id="content-trendingNow" onmouseenter="mouseEnter('div-left-btn3', 'div-right-btn3')" onmouseleave="mouseLeave('div-left-btn3', 'div-right-btn3')">
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn3">
+                        <button onclick="goLeft('content-trendingNow')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/close-enough.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/les-artisant-du-fun.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/outlander.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/ozark.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/paradise-police.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/unBailEnEnfer.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/the-pirates.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/kotaro.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/hunterXhunter.webp" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/current-trend/breaking-bad.webp" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn3">
+                        <button onclick="goRight('content-trendingNow')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section : To Resume -->
+        <section>
+
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a href="#">To Resume</a>
+                </h2>
+    
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-scroll scroll-smooth" id="content-to-resume" onmouseenter="mouseEnter('div-left-btn4', 'div-right-btn4')" onmouseleave="mouseLeave('div-left-btn4', 'div-right-btn4')">
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn4">
+                        <button onclick="goLeft('content-to-resume')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/rick-and-morty.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/massacre.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/ne-me-tue-pas.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/peaky-blinder.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/snowpiercer.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/rick-and-morty.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/massacre.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/ne-me-tue-pas.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/peaky-blinder.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reprendre/snowpiercer.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn4">
+                        <button onclick="goRight('content-to-resume')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section : TV Shows By Genre -->
+        <section>
+            <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                <a class="" href="#">TV Shows By Genre</a>
+            </h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3 pl-11 font-bold ">
+
+                <div class="w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/action.jpg')] bg-cover rounded">
+                    <div class="flex items-center h-full rounded bg-gradient-to-r from-orange-500/90 to-orange-50/5 hover:from-orange-500/50">
+                        <a href="#" class="text-white pl-2 py-7 w-full h-full">Action</a>
+                    </div>
+                </div>
+                <div class="w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/animN.jpg')] bg-cover rounded">
+                    <div class="flex items-center h-full rounded pl-2 bg-gradient-to-r from-red-600/90 to-red-50/5 hover:from-red-600/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Anime</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/mickey.jpg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-pink-500/90 to-pink-600/5 hover:from-pink-500/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Children</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/comedieR.jpg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-orange-600/90 to-orange-600/5 hover:from-orange-600/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Comedy</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/documentaire.jpg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-green-700/90 to bg-green-700/5 hover:from-green-700/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Documentaire</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/drama.webp')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-pink-800/90 to-pink-800/5 hover:from-pink-800/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Drama</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/fantasy.jpg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-teal-500/90 to-teal-500/5 hover:from-teal-500/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Fantasy</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/french.jpg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-blue-600/90 to-blue-600/5 hover:from-blue-500/50">
+                        <a href="#" class="text-white py-7 w-full h-full">French</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/horror.jpg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-violet-600/90 to-violet-600/5 hover:from-violet-600/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Horror</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/international.webp')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-green-400/90 to-green-400/5 hover:from-green-400/50">
+                        <a href="#" class="text-white py-7 w-full h-full">International</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/reality.jpeg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-blue-300/90 to-blue-300/5 hover:from-blue-300/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Reality</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/romance.jpg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-pink-400/90 to-pink-400/5 hover:from-pink-400/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Romance</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/sci-fi.jpg')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-cyan-500/90 to-cyan-500/5 hover:from-cyan-500/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Sci-Fi</a>
+                    </div>
+                </div>
+                <div class="rounded w-50 h-20 bg-[url('./assets/img/img-main/tv-genre/thriller.webp')] bg-cover">
+                    <div class="flex items-center pl-2 h-full rounded bg-gradient-to-r from-violet-400/90 to-violet-400/5 hover:from-violet-400/50">
+                        <a href="#" class="text-white py-7 w-full h-full">Thriller</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Section : Netflix Original -->
+        <section>
+
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a href="#">Netflix Original</a>
+                </h2>
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-scroll scroll-smooth" id="content-netflix-original" onmouseenter="mouseEnter('div-left-btn5', 'div-right-btn5')" onmouseleave="mouseLeave('div-left-btn5', 'div-right-btn5')">
+
+                    <div class="hidden items-center justify-center absolute h-96 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn5">
+                        <button onclick="goLeft('content-netflix-original')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/3_.png" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/blackmirror.png" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/enolaholmes.png" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/lupin.png" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/thewitcher.png" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/3_.png" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/blackmirror.png" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/enolaholmes.png" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/lupin.png" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-52 h-96" src="./assets/img/img-main/original/thewitcher.png" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-96 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn5">
+                        <button onclick="goRight('content-netflix-original')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section : Top 10 Series In France -->
+        <section>
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a class="" href="#">Top 10 Series In France</a>
+                </h2>
+    
+
+                <div class="flex pl-14 space-x-5 w-full overflow-x-scroll scroll-smooth" id="content-top-10" onmouseenter="mouseEnter('div-left-btn6', 'div-right-btn6')" onmouseleave="mouseLeave('div-left-btn6', 'div-right-btn6')">
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn6">
+                        <button onclick="goLeft('content-top-10')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg class="h-full w-6/12" viewBox="-20 0 89 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M35.377 152H72V2.538L2 19.362v30.341l33.377-8.459V152z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/son-vrai-visage.webp" alt="img">
+                        </a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg id="rank-2" width="100%" height="100%" viewBox="0 0 89 154" class="svg-icon svg-icon-rank-2 top-10-rank"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M3.72 152H113v-30.174H50.484l4.355-3.55 29.453-24.012c5.088-4.124 9.748-8.459 13.983-13.004 4.16-4.464 7.481-9.339 9.972-14.629 2.449-5.203 3.678-11.113 3.678-17.749 0-9.428-2.294-17.627-6.875-24.645-4.597-7.042-10.941-12.494-19.07-16.376C77.803 3.957 68.496 2 58.036 2 47.591 2 38.37 4.023 30.347 8.06c-8.015 4.032-14.457 9.578-19.352 16.654-4.492 6.493-7.389 13.803-8.693 21.952h34.055c1.236-3.52 3.398-6.52 6.459-8.97 3.54-2.834 8.277-4.224 14.147-4.224 5.93 0 10.552 1.537 13.76 4.681 3.181 3.12 4.791 7.024 4.791 11.594 0 4.151-1.16 7.934-3.468 11.298-2.192 3.194-5.987 7.124-11.405 11.84L3.72 122.465V152z"></path></svg>
+                            <img class="rounded w-32 h-40" src="./assets/img/img-main/top-10/viking.webp" alt="img">
+                        </a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg  class="h-full w-full" viewBox="0 0 99 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M3.809 41.577h33.243c1.3-2.702 3.545-4.947 6.674-6.72 3.554-2.015 7.83-3.01 12.798-3.01 5.555 0 10.14 1.11 13.723 3.376 3.839 2.427 5.782 6.283 5.782 11.315 0 4.553-1.853 8.395-5.473 11.38-3.547 2.926-8.18 4.37-13.821 4.37H41.44v28.366h16.77c5.572 0 10.275 1.227 14.068 3.711 4.02 2.633 6.071 6.581 6.071 11.616 0 5.705-1.943 9.975-5.853 12.562-3.658 2.42-8.292 3.61-13.863 3.61-5.205 0-9.82-.94-13.827-2.836-3.698-1.75-6.32-4.272-7.785-7.529H2.33c2.096 12.089 7.761 21.65 17.028 28.78C29.242 148.175 42.594 152 59.476 152c10.706 0 20.175-1.783 28.42-5.337 8.185-3.528 14.575-8.486 19.208-14.884 4.595-6.346 6.896-13.938 6.896-22.837 0-6.952-1.93-13.494-5.81-19.666-3.815-6.07-9.68-10.367-17.683-12.908l-5.46-1.735 5.353-2.04c6.659-2.538 11.667-6.338 15.083-11.412 3.431-5.096 5.142-10.806 5.142-17.181 0-8.471-2.262-15.778-6.787-21.985-4.574-6.275-10.7-11.17-18.408-14.696C77.683 3.775 69.109 2 59.687 2 44.084 2 31.515 5.816 21.91 13.415c-9 7.119-15.025 16.486-18.101 28.162z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/inventing anna.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg class="h-full w-full" viewBox="0 0 100 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M72 152h35.333v-30.977H128V92.497h-20.667V2H69.89L2 92.712v28.311h70V152zM36.202 92.188l35.93-47.998v47.998h-35.93z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/qui-ment.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg class="h-full w-full" viewBox="0 0 100 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M105.588 32.174V2H13.534l-8.3 88.357h32.463c2.145-2.362 4.866-4.254 8.143-5.675 3.585-1.554 7.543-2.328 11.859-2.328 6.247 0 11.418 1.745 15.418 5.255 4.061 3.564 6.104 8.37 6.104 14.265 0 6.041-2.044 10.89-6.121 14.387-3.999 3.43-9.162 5.132-15.401 5.132-4.299 0-8.17-.694-11.601-2.095-3.11-1.268-5.577-2.946-7.368-5.042H2.592c3.308 11.593 9.782 20.623 19.46 27.164C32.472 148.464 45.64 152 61.602 152c10.12 0 19.294-1.99 27.548-5.966 8.198-3.949 14.711-9.718 19.572-17.335 4.844-7.59 7.278-16.95 7.278-28.123 0-9.182-2.013-17.314-6.032-24.431-4.02-7.118-9.514-12.7-16.51-16.775-6.99-4.072-14.849-6.109-23.612-6.109-11.06 0-20.099 3.483-27.234 10.461l-3.892 3.806 3.273-35.354h63.595z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/mentiras.webp" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg class="h-full w-full" viewBox="0 0 100 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M79.482 38.192h35.551c-3.284-10.945-8.963-19.573-17.048-25.938C89.323 5.434 77.531 2 62.545 2 50.756 2 40.35 4.86 31.277 10.577c-9.064 5.712-16.198 14.09-21.412 25.178C4.63 46.893 2 60.425 2 76.365c0 14.416 2.356 27.344 7.059 38.798 4.667 11.368 11.573 20.34 20.734 26.956C38.904 148.7 50.225 152 63.816 152a61.513 61.513 0 0019.922-3.278 53.546 53.546 0 0017.378-9.792c5.154-4.33 9.255-9.64 12.314-15.947 3.042-6.273 4.57-13.556 4.57-21.868 0-8.812-2.062-16.636-6.182-23.51-4.134-6.897-9.643-12.293-16.55-16.212-6.905-3.917-14.48-5.874-22.76-5.874-14.546 0-25.34 4.55-32.569 13.63l-4.003 5.03.443-6.413c.874-12.636 3.56-21.85 8.168-27.654 4.69-5.907 10.885-8.9 18.421-8.9 4.26 0 7.826.734 10.685 2.24 2.445 1.287 4.396 2.867 5.829 4.74zM62.605 123c-5.825 0-10.902-1.894-15.136-5.655C43.173 113.528 41 108.603 41 102.71c0-5.881 2.164-10.864 6.44-14.818C51.674 83.975 56.762 82 62.604 82c5.847 0 10.906 1.98 15.074 5.905C81.878 91.859 84 96.837 84 102.71c0 5.885-2.131 10.805-6.35 14.622-4.167 3.77-9.214 5.668-15.045 5.668z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/formule.webp" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg class="h-full w-full" viewBox="0 0 97 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M113,2 L2,2 L2,33.4022989 L75.9665929,33.4022989 L21.22571,152 L60.28102,152 L113,32.7672283 L113,2 Z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/adam.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg class="h-full w-full" viewBox="0 0 97 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M59.5 152c11.335 0 21.358-1.72 30.077-5.15 8.637-3.397 15.361-8.258 20.213-14.586 4.805-6.267 7.21-13.876 7.21-22.899 0-7.326-2.261-14.07-6.813-20.29-4.548-6.214-10.837-10.658-18.922-13.35l-5.4-1.799 5.338-1.975c7.238-2.678 12.572-6.683 16.066-12.018 3.53-5.388 5.284-11.178 5.284-17.414 0-7.912-2.133-14.839-6.405-20.84-4.3-6.042-10.403-10.825-18.345-14.351C79.816 3.78 70.386 2 59.5 2S39.184 3.781 31.197 7.328c-7.942 3.526-14.044 8.309-18.345 14.351-4.272 6.001-6.405 12.928-6.405 20.84 0 6.236 1.755 12.026 5.284 17.414 3.494 5.335 8.828 9.34 16.066 12.018l5.338 1.975-5.4 1.798c-8.085 2.693-14.374 7.137-18.922 13.351C4.261 95.295 2 102.04 2 109.365c0 9.023 2.405 16.632 7.21 22.899 4.852 6.328 11.576 11.19 20.213 14.586 8.72 3.43 18.742 5.15 30.077 5.15zm.5-89c-5.6 0-10.334-1.515-14.125-4.56C41.985 55.313 40 51.183 40 46.21c0-5.244 1.976-9.518 5.875-12.65C49.666 30.515 54.4 29 60 29s10.334 1.515 14.125 4.56C78.025 36.694 80 40.968 80 46.212c0 4.973-1.985 9.103-5.875 12.228C70.334 61.485 65.6 63 60 63zm-.5 62c-6.255 0-11.556-1.613-15.836-4.856-4.41-3.343-6.664-7.816-6.664-13.25 0-5.298 2.258-9.698 6.664-13.038C47.944 90.613 53.245 89 59.5 89c6.255 0 11.556 1.613 15.836 4.856 4.406 3.34 6.664 7.74 6.664 13.038 0 5.434-2.254 9.907-6.664 13.25C71.056 123.387 65.755 125 59.5 125z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/reine.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg class="h-full w-full" viewBox="0 0 90 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M40.0597376,115.807692 L4.47328474,115.807692 C7.45109332,126.586242 13.4362856,135.15497 22.4670906,141.582071 C32.2129251,148.518048 44.5640134,152 59.5759717,152 C78.2141671,152 92.5105725,145.697944 102.6454,133.074799 C112.853557,120.360322 118,101.543854 118,76.5769231 C118,62.1603327 115.678843,49.3016297 111.046669,37.9886125 C106.453069,26.7698049 99.6241767,17.9802976 90.5435117,11.5767831 C81.5017862,5.20072813 70.1375399,2 56.3957597,2 C49.4158116,2 42.68229,3.15952329 36.1849549,5.47966815 C29.7045526,7.79376647 23.8782903,11.1932931 18.6948526,15.6846002 C13.5316746,20.1583529 9.45923583,25.508367 6.46782377,31.7491046 C3.4928156,37.95562 2,45.0644366 2,53.0961538 C2,61.9117395 4.02797967,69.7019439 8.0788911,76.5056791 C12.1434539,83.3323424 17.5832537,88.6925139 24.4218542,92.6108203 C31.2518358,96.5241882 38.8590885,98.4807692 47.2791519,98.4807692 C55.0853554,98.4807692 61.6095996,97.3619306 66.8547126,95.1478231 C72.0569983,92.9517941 76.4513169,89.5970183 80.0605818,85.0622151 L84.0584687,80.039134 L83.6207883,86.4440446 C82.74746,99.2241219 80.0984349,108.438199 75.5533003,114.10687 C70.9310132,119.871766 64.7726909,122.788462 57.2438163,122.788462 C52.8691399,122.788462 49.1904302,122.100251 46.212535,120.692834 C43.5930338,119.454801 41.5307848,117.825945 40.0597376,115.807692 Z M57.5,31 C63.3657106,31 68.4419893,32.9364861 72.6299874,36.7826253 C76.8609583,40.6682294 79,45.6186068 79,51.5 C79,57.3813932 76.8609583,62.3317706 72.6299874,66.2173747 C68.4419893,70.0635139 63.3657106,72 57.5,72 C51.6342894,72 46.5580107,70.0635139 42.3700126,66.2173747 C38.1390417,62.3317706 36,57.3813932 36,51.5 C36,45.6186068 38.1390417,40.6682294 42.3700126,36.7826253 C46.5580107,32.9364861 51.6342894,31 57.5,31 Z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/snowpiercer.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#" class="flex h-40">
+                            <svg class="h-full w-full" viewBox="0 0 140 154"><path stroke="#595959" stroke-linejoin="square" stroke-width="4" d="M34.757 151.55h35.869V2.976L2 19.687v30.14l32.757-8.41v110.132zm105.53 3.45c12.394 0 23.097-3.12 32.163-9.353 9.093-6.25 16.11-15.047 21.066-26.43C198.5 107.766 201 94.196 201 78.5c0-15.698-2.5-29.266-7.484-40.716-4.955-11.384-11.973-20.18-21.066-26.431C163.384 5.119 152.681 2 140.287 2c-12.393 0-23.096 3.12-32.162 9.353-9.093 6.25-16.11 15.047-21.066 26.43-4.984 11.45-7.484 25.02-7.484 40.717 0 15.698 2.5 29.266 7.484 40.716 4.955 11.384 11.973 20.18 21.066 26.431 9.066 6.234 19.769 9.353 32.162 9.353zm0-31.368c-7.827 0-13.942-4.147-18.15-12.178-4.053-7.736-6.047-18.713-6.047-32.954s1.994-25.218 6.047-32.954c4.208-8.03 10.323-12.178 18.15-12.178 7.827 0 13.943 4.147 18.15 12.178 4.053 7.736 6.048 18.713 6.048 32.954s-1.995 25.218-6.047 32.954c-4.208 8.03-10.324 12.178-18.15 12.178z"></path></svg>
+                            <img class="rounded w-28 h-40" src="./assets/img/img-main/top-10/outlander.webp" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn6">
+                        <button onclick="goRight('content-top-10')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section : Action -->
+        <section>
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a href="#">Action</a>
+                </h2>
+    
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-scroll scroll-smooth" id="content-action" onmouseenter="mouseEnter('div-left-btn7', 'div-right-btn7')" onmouseleave="mouseLeave('div-left-btn7', 'div-right-btn7')">
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn7">
+                        <button onclick="goLeft('content-action')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/world-war.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/the-dark-night.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/fury.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/dracula.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/batman-vs-superman.webp" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/world-war.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/the-dark-night.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/fury.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/dracula.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/blockbuster/batman-vs-superman.webp" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn7">
+                        <button onclick="goRight('content-action')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section : Comedy -->
+        <section>
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a href="#">Comedy</a>
+                </h2>
+    
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-scroll scroll-smooth" id="content-comedy" onmouseenter="mouseEnter('div-left-btn8', 'div-right-btn8')" onmouseleave="mouseLeave('div-left-btn8', 'div-right-btn8')">
+                    
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn8">
+                        <button onclick="goLeft('content-comedy')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/ted2.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/war-dogs.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/lol.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/happy-birthdead.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/fear.webp" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/ted2.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/war-dogs.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/lol.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/happy-birthdead.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/comedy/fear.webp" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn8">
+                        <button onclick="goRight('content-comedy')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!--Section : Horror -->
+        <section>
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a href="#">Horror</a>
+                </h2>
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-scroll scroll-smooth" id="content-horror" onmouseenter="mouseEnter('div-left-btn9', 'div-right-btn9')" onmouseleave="mouseLeave('div-left-btn9', 'div-right-btn9')">
+                    
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn9">
+                        <button onclick="goLeft('content-horror')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/the mist.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/scary-movie.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/planete-terreur.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/hallowen.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/american-nightmare.webp" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/the mist.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/scary-movie.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/planete-terreur.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/hallowen.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/horror/american-nightmare.webp" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn9">
+                        <button onclick="goRight('content-horror')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section : Reality Show -->
+        <section>
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a href="#">Reality Show</a>
+                </h2>
+    
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-scroll scroll-smooth" id="content-reality" onmouseenter="mouseEnter('div-left-btn10', 'div-right-btn10')" onmouseleave="mouseLeave('div-left-btn10', 'div-right-btn10')">
+                    
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn10">
+                        <button onclick="goLeft('content-reality')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/you-wild.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/les-mecano.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/irréel.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/car-master.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/artisant-du-funr.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/you-wild.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/les-mecano.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/irréel.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/car-master.jpg" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/reality-show/artisant-du-funr.jpg" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn10">
+                        <button onclick="goRight('content-reality')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--Section : Army -->
+        <section>
+            <div>
+                <h2 class="text-white text-2xl font-bold ml-12 mt-7 mb-5"> 
+                    <a href="#">Army</a>
+                </h2>
+    
+
+                <div class="flex pl-14 space-x-2 w-full overflow-x-scroll scroll-smooth" id="content-army" onmouseenter="mouseEnter('div-left-btn11', 'div-right-btn11')" onmouseleave="mouseLeave('div-left-btn11', 'div-right-btn11')">
+                    
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 left-0 bg-gradient-to-r from-black to-black/30 hover:to-black/50 rounded-r" id="div-left-btn11">
+                        <button onclick="goLeft('content-army')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-left"></i></button>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/top-gun.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/troie.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/300.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/invincible.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/la-chute-du-faucon-noir.webp" alt="img"></a>
+                    </div>
+
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/top-gun.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/troie.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/300.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/invincible.webp" alt="img"></a>
+                    </div>
+                    
+                    <div class="min-w-max">
+                        <a href="#"><img class="rounded w-72 h-40" src="./assets/img/img-main/army/la-chute-du-faucon-noir.webp" alt="img"></a>
+                    </div>
+
+                    <div class="hidden items-center justify-center absolute h-40 w-16 z-20 right-0 bg-gradient-to-l from-black to-black/30 hover:to-black/50 rounded-l" id="div-right-btn11">
+                        <button onclick="goRight('content-army')" class="text-white focus:outline-none text-4xl hover:text-5xl top-2/4 cursor-pointer h-full w-full"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="h-auto w-full flex justify-center p-5 mb-5">
+
+            <div class="w-2/3 flex flex-col gap-y-5">
+                
+                <div class="flex gap-x-7">
+                    <button><i class="fa-brands fa-facebook-f text-2xl"></i></button>
+                    <button><i class="fa-brands fa-instagram text-2xl"></i></button>
+                    <button><i class="fa-brands fa-twitter text-2xl"></i></button>
+                    <button><i class="fa-brands fa-youtube text-2xl"></i></button>
+                </div>
+        
+                <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 text-sm">
+                    <a href="#" class="text-gray-500 hover:underline">Audio and Subtitles</a>
+                    <a href="#" class="text-gray-500 hover:underline">Audio Description</a>
+                    <a href="#" class="text-gray-500 hover:underline">Help Center</a>
+                    <a href="#" class="text-gray-500 hover:underline">Gift Card</a>
+                    <a href="#" class="text-gray-500 hover:underline">Media Center</a>
+                    <a href="#" class="text-gray-500 hover:underline">Investor Relations</a>
+                    <a href="#" class="text-gray-500 hover:underline">Jobs</a>
+                    <a href="#" class="text-gray-500 hover:underline">Terms of Use</a>
+                    <a href="#" class="text-gray-500 hover:underline">Privacy</a>
+                    <a href="#" class="text-gray-500 hover:underline">Legal Notices</a>
+                    <a href="#" class="text-gray-500 hover:underline">Cookie Preferences</a>
+                    <a href="#" class="text-gray-500 hover:underline">Corporate information</a>
+                    <a href="#" class="text-gray-500 hover:underline">Contact Us</a>
+                </div>
+        
+                <div>
+                    <button class="text-gray-500 text-sm hover:text-white border border-gray-500 px-3 py-2">Service Code</button>
+                </div>
+        
+                <div>
+                    <p class="text-gray-500 text-xs">
+                        <i class="fa-regular fa-copyright"></i>1997-2022 Netflix, Inc.
+                    </p>
+                </div>
+    
+            </div>
+    
+    </footer>
+
+</body>
+<script src="./assets/js/main.js"></script>
+</html>
